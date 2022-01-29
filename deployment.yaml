@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ccwardrobe
+  name: ccwardrobe-deployment
+  namespace: ccwardrobe
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ccwardrobe
+  template:
+    metadata:
+      labels:
+        app: ccwardrobe
+    spec:
+      containers:
+        - image: webserver-image:v2
+          imagePullPolicy: Never  
+          name: ccwardrobe
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 0.5 
+              memory: 300Mi
+            limits:
+              cpu: 0.6
+              memory: 400Mi
