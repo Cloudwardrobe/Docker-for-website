@@ -1,0 +1,14 @@
+We have used a online purchase site prototype and tried to deploy it using Docker container and manage it using Kubernetes.
+
+ns.yaml - namespace file
+deployment.yaml - Deployment file
+service.yaml - service file
+
+We dockerised the html by 
+	using nginx:alphine proxy serve and building image and containerizing it
+
+we used minikube to create a single cluster
+
+we deployed the pod 
+
+set replicas and resource limits 
